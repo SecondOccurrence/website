@@ -18,8 +18,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 				<div class="mx-auto max-w-6xl py-12">
 					<div class="mx-auto sm:text-left">
 						<h2 class="mb-3 px-4 sm:px-24 font-bold text-3xl">Josh Smith</h2>
-						<h2 class="px-4 sm:px-24 text-2xl opacity-90">Undergraduate Student at Murdoch University</h2>
-						<p class="px-4 py-4 sm:px-24 text-xl opacity-60">
+						<h2 class="px-4 sm:px-24 text-2xl">Undergraduate Student at Murdoch University</h2>
+						<p class="px-4 py-4 sm:px-24 text-xl">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
@@ -31,8 +31,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 			<section>
 				<div class="mx-auto max-w-6xl py-12">
 					<div class="mx-auto sm:text-center">
-						<h2 class="mb-3 px-4 font-bold text-3xl">Skills</h2>
-						<p class="px-4 text-lg">wah</p>
+						<h2 class="mb-3 px-4 font-bold text-3xl">Background</h2>
+						<div>
+							<div>
+								<button id="expButton" class="px-2">Experience</button>
+								<button id="skillButton" class="px-2">Skills</button>
+							</div>
+							<div id="experience" class="hidden">
+								experience area
+							</div>
+							<div id="skills">
+								skills area
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -70,3 +81,26 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 		<Footer/>
 	</body>
 </html>
+<script>
+	document.querySelector('#skillButton')?.addEventListener('click', () => {
+		if(!document.querySelector('#experience')?.classList.contains('hidden')) //if experience are not hidden (shown)
+		{
+			document.querySelector('#experience')?.classList.add('hidden'); //hide the experience
+		}
+		if(document.querySelector('#skills')?.classList.contains('hidden')) //if skills is hidden
+		{
+			document.querySelector('#skills')?.classList.remove('hidden');
+		}
+	});
+
+	document.querySelector('#expButton')?.addEventListener('click', () => {
+		if(!document.querySelector('#skills')?.classList.contains('hidden')) //if skills are not hidden (shown)
+		{
+			document.querySelector('#skills')?.classList.add('hidden'); //hide the skills
+		}
+		if(document.querySelector('#experience')?.classList.contains('hidden')) //if experience is hidden
+		{
+			document.querySelector('#experience')?.classList.remove('hidden');
+		}
+	});
+</script>
