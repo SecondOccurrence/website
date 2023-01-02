@@ -14,7 +14,42 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 	<body class="bg-background text-white font-sans ">
 		<Header title={SITE_TITLE}/>
 		<main>
-
+			<div>
+				About
+			</div>
+			<div>
+				Skills
+			</div>
+			<section>
+				<div class="mx-auto max-w-6xl py-12">
+					<div class="mx-auto sm:text-center">
+						<h2 class="mb-3 px-4 font-bold text-3xl">Projects</h2>
+						<p class="px-4 text-lg">See what i've been up to in my free time</p>
+					</div>
+					<div class="mx-auto px-4 py-12 grid md:grid-cols-2 gap-4">
+						<Card
+						title="project01"
+						body="description"
+						href="/"
+						/>
+						<Card
+						title="project02"
+						body="description"
+						href="/"
+						/>
+						<Card
+						title="project03"
+						body="description"
+						href="/"
+						/>
+						<Card
+						title="project04"
+						body="description"
+						href="/"
+						/>
+					</div>
+				</div>
+			</section>
 		</main>
 		<Footer/>
 	</body>
