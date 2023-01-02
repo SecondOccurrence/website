@@ -1,0 +1,22 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../config';
+---
+
+<header class="sticky top-0 flex-none backdrop-blur-sm bg-background/95">
+	<div class="py-4 px-48 flex justify-between">
+		<div class="flex justify-start py-3">
+			<h2 class=" md:text-xl text=2x1">
+				{SITE_TITLE}
+			</h2>
+		</div>
+		<nav class="items-center w-auto flex">
+			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href="">Resume</HeaderLink>
+			<HeaderLink href="https://github.com/SecondOccurrence" target="_blank">
+				<i class="fa-brands fa-github"></i>
+			</HeaderLink>
+		</nav>
+	</div>
+</header>
