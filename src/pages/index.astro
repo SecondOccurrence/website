@@ -16,6 +16,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 		<Header title={SITE_TITLE}/>
 		<main>
 			<section>
+				<a id="about" class="hidden" style="display:block; position:relative; top:-50px;"></a>
 				<div class="mx-auto max-w-6xl py-12">
 					<div class="mx-auto sm:text-left">
 						<h2 class="mb-3 px-4 sm:px-24 font-bold text-3xl">Josh Smith</h2>
@@ -30,14 +31,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 				</div>
 			</section>
 			<section>
+				<a id="background" class="hidden" style="display:block; position:relative; top:-50px;"></a> <!--unsure how to have negative position values in tailwind -->
 				<div class="mx-auto max-w-6xl py-12">
 					<div class="mx-auto sm:text-center">
 						<h2 class="pb-3 px-4 font-bold text-3xl">Background</h2>
 						<div class="px-2">
-							<input type="radio" id="expButton" class="appearance-none">
-							<label for="expButton">Experience</label>
-							<input type="radio" id="eduButton" class="appearance-none">
-							<label for="eduButton">Education</label>
+							<button id="expButton" class="p-4 text-lg hover:underline">Experience</button>
+							<button id="eduButton" class="p-4 text-lg hover:underline">Education</button>
 						</div>
 						<div id="experience" class="mx-auto px-4 py-12 grid gap-4">
 							<BackgroundCard
@@ -75,6 +75,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 				</div>
 			</section>
 			<section>
+				<a id="projects"></a>
 				<div class="mx-auto max-w-6xl py-12">
 					<div class="mx-auto sm:text-center">
 						<h2 class="mb-3 px-4 font-bold text-3xl">Projects</h2>
@@ -114,22 +115,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 	document.querySelector('#expButton')?.addEventListener('click', () => 
 	{
-		if(experienceButton?.checked == true)
-		{
-			console.log("click");
-			document.querySelector('#experience')?.classList.remove('hidden');
-			document.querySelector('#edu')?.classList.add('hidden');
-		}
+		document.querySelector('#experience')?.classList.remove('hidden');
+		document.querySelector('#edu')?.classList.add('hidden');
 	});
 
 	document.querySelector('#eduButton')?.addEventListener('click', () => 
 	{
-		if(educationButton?.checked == true)
-		{
-			document.querySelector('#edu')?.classList.remove('hidden');
-			document.querySelector('#experience')?.classList.add('hidden');
-		}
+		document.querySelector('#edu')?.classList.remove('hidden');
+		document.querySelector('#experience')?.classList.add('hidden');
 	})
-
-
 </script>
