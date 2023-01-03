@@ -38,8 +38,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 							<label for="expButton">Experience</label>
 							<input type="radio" id="eduButton" class="appearance-none">
 							<label for="eduButton">Education</label>
-							<input type="radio" id="skillButton" class="appearance-none">
-							<label for="skillButton">Skills</label>
 						</div>
 						<div id="experience" class="mx-auto px-4 py-12 grid gap-4">
 							<BackgroundCard
@@ -113,7 +111,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 <script>
 	const experienceButton = document.getElementById('expButton') as HTMLInputElement;
 	const educationButton = document.getElementById('eduButton') as HTMLInputElement;
-	const skillsButton = document.getElementById('skillButton') as HTMLInputElement;
 
 	document.querySelector('#expButton')?.addEventListener('click', () => 
 	{
@@ -122,7 +119,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 			console.log("click");
 			document.querySelector('#experience')?.classList.remove('hidden');
 			document.querySelector('#edu')?.classList.add('hidden');
-			document.querySelector('#skills')?.classList.add('hidden');
 		}
 	});
 
@@ -132,17 +128,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 		{
 			document.querySelector('#edu')?.classList.remove('hidden');
 			document.querySelector('#experience')?.classList.add('hidden');
-			document.querySelector('#skills')?.classList.add('hidden');
-		}
-	})
-
-	document.querySelector('#skillButton')?.addEventListener('click', () => 
-	{
-		if(skillsButton?.checked == true)
-		{
-			document.querySelector('#skills')?.classList.remove('hidden');
-			document.querySelector('#experience')?.classList.add('hidden');
-			document.querySelector('#edu')?.classList.add('hidden');
 		}
 	})
 
