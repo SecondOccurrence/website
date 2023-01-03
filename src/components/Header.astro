@@ -10,9 +10,6 @@ import { SITE_TITLE } from '../config';
 				{SITE_TITLE}
 			</h2>
 			<div class="flex items-center md:hidden">
-				<button class="p-2" type="button">
-					<iconify-icon icon="ph:sun" style="color: white;" width="24" height="24"></iconify-icon>
-				</button>
 				<button id="menuButton" class="p-2" type="button">
 					<iconify-icon icon="mdi:menu" style="color: white;" width="24" height="24"></iconify-icon>
 				</button>
@@ -34,7 +31,17 @@ import { SITE_TITLE } from '../config';
 <script>
     document.querySelector('#menuButton')?.addEventListener('click', () => {
       document.querySelector('#MainNav')?.classList.toggle('hidden');
-	  document.querySelector('header')?.classList.toggle('h-screen');
+			if(document.querySelector('header')?.classList.contains('bg-background/95'))
+			{
+				document.querySelector('header')?.classList.remove('bg-background/95');
+				document.querySelector('header')?.classList.add('bg-background');
+			}
+			else
+			{
+				document.querySelector('header')?.classList.add('bg-background/95');
+				document.querySelector('header')?.classList.remove('bg-background');
+			}
+	  	document.querySelector('header')?.classList.toggle('h-screen');
     });
 </script>
 <style>

@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Card from '../components/Card.astro';
+import BackgroundCard from '../components/BackgroundCard.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 ---
 
@@ -33,14 +34,23 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 					<div class="mx-auto sm:text-center">
 						<h2 class="mb-3 px-4 font-bold text-3xl">Background</h2>
 						<div>
-							<div>
+							<div class="px-2">
 								<button id="expButton" class="px-2">Experience</button>
 								<button id="skillButton" class="px-2">Skills</button>
 							</div>
-							<div id="experience" class="hidden">
-								experience area
+							<div id="experience" class="mx-auto px-4 py-12 grid gap-4">
+								<BackgroundCard
+									date="2022-2022"
+									title="job name"
+									desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+								/>
+								<BackgroundCard
+								date="2022-current"
+								title="job name"
+								desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+							/>
 							</div>
-							<div id="skills">
+							<div id="skills" class="hidden">
 								skills area
 							</div>
 						</div>
