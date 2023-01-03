@@ -8,8 +8,8 @@ export interface Props {
 const { href, title, body } = Astro.props;
 ---
 
-<li class="link-card flex">
-	<a href={href} class="bg-card p-4 opacity-80 w-full rounded-md">
+<li class="w-full flex justify-self-center">
+	<a href={href} class="p-4 w-full bg-card rounded-md">
 		<h2>
 			{title}
 			<span>&rarr;</span>

@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Card from '../components/Card.astro';
+import BackgroundCard from '../components/BackgroundCard.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 ---
 
@@ -11,21 +12,116 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="bg-background text-white  font-sans">
-		<Header title={SITE_TITLE} />
-		<main class="m-auto px-20 max-w-prose leading-6">
-			<Card
-				title="title"
-				body="body"
-				href=""
-			/>
+	<body class="bg-background text-white font-sans ">
+		<Header title={SITE_TITLE}/>
+		<main>
+			<section>
+				<a id="about" class="hidden" style="display:block; position:relative; top:-50px;"></a>
+				<div class="mx-auto max-w-6xl py-12">
+					<div class="mx-auto sm:text-left">
+						<h2 class="mb-3 px-4 sm:px-24 font-bold text-3xl">Josh Smith</h2>
+						<h2 class="px-4 sm:px-24 text-2xl">Undergraduate Student at Murdoch University</h2>
+						<p class="px-4 py-4 sm:px-24 text-xl">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+					</div>
+				</div>
+			</section>
+			<section>
+				<a id="background" class="hidden" style="display:block; position:relative; top:-50px;"></a> <!--unsure how to have negative position values in tailwind -->
+				<div class="mx-auto max-w-6xl py-12">
+					<div class="mx-auto sm:text-center">
+						<h2 class="pb-3 px-4 font-bold text-3xl">Background</h2>
+						<div class="px-2">
+							<button id="expButton" class="p-4 text-lg hover:underline">Experience</button>
+							<button id="eduButton" class="p-4 text-lg hover:underline">Education</button>
+						</div>
+						<div id="experience" class="mx-auto px-4 py-12 grid gap-4">
+							<BackgroundCard
+								date="2022-2022"
+								title="job name"
+								desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+							/>
+							<BackgroundCard
+							date="2022-current"
+							title="job name"
+							desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+							/>
+							<BackgroundCard
+							date="2023-current"
+							title="job name"
+							desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+							/>
+						</div>
+						<div id="edu" class="mx-auto px-4 py-12 grid gap-4 hidden">
+							<BackgroundCard
+								date="2016-2021"
+								title="secondary education"
+								desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+							/>
+							<BackgroundCard
+								date="2022-current"
+								title="Bachelor of IT at Murdoch University"
+								desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+							/>
+						</div>
+						<div id="skills" class="hidden">
+							skills area
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<a id="projects"></a>
+				<div class="mx-auto max-w-6xl py-12">
+					<div class="mx-auto sm:text-center">
+						<h2 class="mb-3 px-4 font-bold text-3xl">Projects</h2>
+						<p class="px-4 text-lg">See what i've been up to in my free time</p>
+					</div>
+					<div class="mx-auto px-4 py-12 grid md:grid-cols-2 gap-4">
+						<Card
+						title="project01"
+						body="description"
+						href="/"
+						/>
+						<Card
+						title="project02"
+						body="description"
+						href="/"
+						/>
+						<Card
+						title="project03"
+						body="description"
+						href="/"
+						/>
+						<Card
+						title="project04"
+						body="description"
+						href="/"
+						/>
+					</div>
+				</div>
+			</section>
 		</main>
-		<Footer />
+		<Footer/>
 	</body>
 </html>
-<style>
-	.fa-discord{color: white;}
-	.fa-linkedin-in{color: white;}
-	.fa-instagram{color: white;}
-	.fa-github{color: white;}
-</style>
+<script>
+	const experienceButton = document.getElementById('expButton') as HTMLInputElement;
+	const educationButton = document.getElementById('eduButton') as HTMLInputElement;
+
+	document.querySelector('#expButton')?.addEventListener('click', () => 
+	{
+		document.querySelector('#experience')?.classList.remove('hidden');
+		document.querySelector('#edu')?.classList.add('hidden');
+	});
+
+	document.querySelector('#eduButton')?.addEventListener('click', () => 
+	{
+		document.querySelector('#edu')?.classList.remove('hidden');
+		document.querySelector('#experience')?.classList.add('hidden');
+	})
+</script>
