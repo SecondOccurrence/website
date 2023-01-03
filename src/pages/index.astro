@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Card from '../components/Card.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 import BackgroundCard from '../components/BackgroundCard.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 ---
@@ -19,14 +19,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 				<a id="about" class="hidden" style="display:block; position:relative; top:-50px;"></a>
 				<div class="mx-auto max-w-6xl py-12">
 					<div class="mx-auto sm:text-left">
-						<h2 class="mb-3 px-4 sm:px-24 font-bold text-3xl">Josh Smith</h2>
-						<h2 class="px-4 sm:px-24 text-2xl">Undergraduate Student at Murdoch University</h2>
-						<p class="px-4 py-4 sm:px-24 text-xl">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						<h2 class="mb-3 px-4 sm:px-24 font-bold text-3xl text-white">Josh Smith</h2>
+						<h2 class="px-4 sm:px-24 text-2xl text-">Undergraduate Student at Murdoch University</h2>
+						<p class="px-4 py-4 sm:px-24 text-lg text-greyTwo">
+							Currently in my second year of university, studying a Bachelor of IT with a Computer Science Major. 
+							I'm a passionate learner with excellent critical thinking skills. I'm also hardworking and am able to work well under pressure.
+							Currently focused on expanding my knowledge in the IT industry, specifically programming, picking up as many skills as i can along the way.
 						</p>
+						<div class="mx-auto max-w-6xl py-12 flex flex-col items-center gap-4">
+							<h2 class="text-md text-white">Here are my socials if you want to stalk me</h2>
+							<div>
+								<ul class="flex flex-row gap-4">
+									<a href="https://www.linkedin.com/in/josh-smith-483856260/" target="_blank"><iconify-icon icon="mdi:linkedin" style="color: #006bff;" width="36" height="36"></iconify-icon></a>
+									<a href="https://www.linkedin.com/in/josh-smith-483856260/" target="_blank"><iconify-icon icon="mdi:github" style="color: #006bff;" width="36" height="36"></iconify-icon></a>
+									<!--<a><iconify-icon icon="mdi:twitter" style="color: #006bff;" width="36" height="36"></iconify-icon></a>-->
+								</ul>
+							</div>
+							<hr class="mt-6 w-full bg-white">
+						</div>
 					</div>
 				</div>
 			</section>
@@ -36,42 +46,43 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 					<div class="mx-auto sm:text-center">
 						<h2 class="pb-3 px-4 font-bold text-3xl">Background</h2>
 						<div class="px-2">
-							<button id="expButton" class="p-4 text-lg hover:underline">Experience</button>
-							<button id="eduButton" class="p-4 text-lg hover:underline">Education</button>
+							<button id="expButton" class="p-4 text-lg transition duration-250 hover:text-blue">Experience</button>
+							<button id="eduButton" class="p-4 text-lg transition duration-250 hover:text-blue">Education</button>
 						</div>
 						<div id="experience" class="mx-auto px-4 py-12 grid gap-4">
 							<BackgroundCard
-								date="2022-2022"
-								title="job name"
-								desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+								date="Feb 2022 - April 2022"
+								title="Telethon Community Cinemas"
+								desc="Volunteered at the Murdoch community cinema. Stood behind the counter serving food to the guests"
 							/>
 							<BackgroundCard
-							date="2022-current"
-							title="job name"
-							desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+							date="Mar 2022-current"
+							title="Optus Stadium"
+							desc="Serving as a Customer Service Attendant. Working on event days such as AFL assisting patrons."
 							/>
 							<BackgroundCard
-							date="2023-current"
-							title="job name"
-							desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+							date="Jan 2023-current"
+							title="Murdoch IT Society Secretary"
+							desc="Currently starting this role for 2023. As secretary, I am generally keeping records of Committee meetings and keeping the Committee and Association well organised."
 							/>
 						</div>
 						<div id="edu" class="mx-auto px-4 py-12 grid gap-4 hidden">
 							<BackgroundCard
-								date="2016-2021"
-								title="secondary education"
-								desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+								date="Feb 2020 - Nov 2021"
+								title="WACE"
+								desc="Graduated from Year 12 with two Academic Excellence Awards in both Media and Physics General"
 							/>
 							<BackgroundCard
 								date="2022-current"
 								title="Bachelor of IT at Murdoch University"
-								desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+								desc="Currently undergoing and commencing my second year after achieving ideal results in the previous year."
 							/>
 						</div>
 						<div id="skills" class="hidden">
 							skills area
 						</div>
 					</div>
+					<hr class="mt-6 w-full bg-white">
 				</div>
 			</section>
 			<section>
@@ -82,27 +93,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 						<p class="px-4 text-lg">See what i've been up to in my free time</p>
 					</div>
 					<div class="mx-auto px-4 py-12 grid md:grid-cols-2 gap-4">
-						<Card
-						title="project01"
-						body="description"
-						href="/"
-						/>
-						<Card
-						title="project02"
-						body="description"
-						href="/"
-						/>
-						<Card
-						title="project03"
-						body="description"
-						href="/"
-						/>
-						<Card
-						title="project04"
-						body="description"
-						href="/"
-						/>
+						<ProjectCard
+						title="s&box Fishing Minigame"
+						body="Made with an intention to be included in a bigger collaborative project, this minigame plans to have 2+ players fish in a pond, catching fish to gain points and win."
+						href="https://github.com/SecondOccurrence/sbox-fishing"
+						>
+							<div class="flex flex-row gap-4">
+								<h2 class="pt-3 text-xs text-blue font-bold">Languages:</h2>
+								<h2 class="pt-3 text-xs text-blue font-medium">C#</h2>
+							</div>
+						</ProjectCard>
 					</div>
+					<p class="px-4 text-md text-center">See my <a href="https://github.com/SecondOccurrence" target="_blank" class="text-blue font-bold">Github</a> for other projects I've worked on with others</p>
+					<hr class="mt-8 w-full bg-white">
 				</div>
 			</section>
 		</main>
