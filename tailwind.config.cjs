@@ -6,7 +6,10 @@ module.exports = {
 		{
 			"background": "#121212",
 			"card": "#1e1e1e",
-			"white": "#FFFFFF"
+			"blue": "#006bff",
+			"white": "#FDFDFD",
+			"greyOne": "#EDEDED",
+			"greyTwo": "#D0D0D0"
 		},
 		extend: {},
 	},
