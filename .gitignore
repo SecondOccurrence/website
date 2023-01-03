@@ -22,4 +22,3 @@ pnpm-debug.log*
 package.json
 package-lock.json
 .vscode
-src/data.json
