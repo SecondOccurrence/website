@@ -6,9 +6,7 @@ import { SITE_TITLE } from '../config';
 <header class="sticky top-0 flex-none backdrop-blur-sm bg-background/95">
 	<div class="mx-auto py-4 px-3 max-w-6xl md:flex md:justify-between">
 		<div class="py-3 flex justify-between">
-			<h2 class="text=x1 md:text-lg">
-				{SITE_TITLE}
-			</h2>
+			<h2 class="text=x1 md:text-2xl flex items-center">{SITE_TITLE}</h2>
 			<div id="phoneMenu" class="flex items-center md:hidden">
 				<button id="menuButton" class="p-2" type="button">
 					<iconify-icon icon="mdi:menu" style="color: white;" width="24" height="24"></iconify-icon>
@@ -20,11 +18,8 @@ import { SITE_TITLE } from '../config';
 				<HeaderLink id="navButton" href="#about">About</HeaderLink>
 				<HeaderLink id="navButton" href="#background">Background</HeaderLink>
 				<HeaderLink id="navButton" href="#projects">Projects</HeaderLink>
-				<HeaderLink id="navButton" href="/">Contact</HeaderLink>
-				<HeaderLink href="https://github.com/SecondOccurrence" target="_blank">
-					<iconify-icon class="pt-0.5 2xl:pt-1.5" icon="mdi:github" style="color: white;" width="24" height="24"></iconify-icon>
-				</HeaderLink>
 			</ul>
+			<button class="px-3 py-1 inline-block text-lg border-solid border-2 rounded-md text-blue hover:bg-blue hover:bg-opacity-30">Resume</button>
 		</nav>
 	</div>
 </header>
