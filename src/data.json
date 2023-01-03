@@ -1,0 +1,62 @@
+{
+  "siteSettings":
+  {
+    "SITE_TITLE": "Josh Smith",
+    "SITE_DESCRIPTION": "Welcome to my Website!"
+  },
+  "about":
+  {
+    "name": "Josh Smith",
+    "title": "Undergraduate Student at Murdoch University",
+    "description": "Currently in my second year of university, studying a Bachelor of IT with a Computer Science Major. I'm a passionate learner with excellent critical thinking skills. I'm also hardworking and am able to work well under pressure. Currently focused on expanding my knowledge in the IT industry, specifically programming, picking up as many skills as i can along the way.",
+    "socials": "Here are my socials if you want to stalk me"
+  },
+  "skills":
+  {
+    "title": "Skills",
+    "sub1": "Currently working with / learning",
+    "sub2": "Have used in the past",
+    "sub3": "Non-programming related"
+  },
+  "background":
+  {
+    "title": "Background",
+    "sub1": "Experience",
+    "sub2": "Education",
+    "card1": 
+    {
+      "date": "Feb 2022 - April 2022",
+      "title": "Telethon Community Cinemas",
+      "desc": "Volunteered at the Murdoch community cinema. Stood behind the counter serving food to the guests"
+    },
+    "card2": 
+    {
+      "date": "Mar 2022-current",
+      "title": "Optus Stadium",
+      "desc": "Serving as a Customer Service Attendant. Working on event days such as AFL assisting patrons."
+    },
+    "card3":
+    {
+      "date": "Jan 2023-current",
+      "title": "Murdoch IT Society Secretary",
+      "desc": "Currently starting this role for 2023. As secretary, I am generally keeping records of Committee meetings and keeping the Committee and Association well organised."
+    },
+    "card4":
+    {
+      "date": "Feb 2020 - Nov 2021",
+      "title": "WACE",
+      "desc": "Graduated from Year 12 with two Academic Excellence Awards in both Media and Physics General"
+    },
+    "card5":
+    {
+      "date": "2022-current",
+      "title": "Bachelor of IT at Murdoch University",
+      "desc": "Currently undergoing and commencing my second year after achieving ideal results in the previous year."
+    }
+  },
+  "projects": 
+  {
+    "title": "Projects",
+    "desc": "See what i've been up to in my free time"
+  }
+}
