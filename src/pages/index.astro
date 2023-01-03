@@ -4,30 +4,26 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import BackgroundCard from '../components/BackgroundCard.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import json from "../data.json";
 ---
 
 <!DOCTYPE html>
 <html class="2xl:text-[20px]" lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={json.siteSettings.SITE_TITLE} description={json.siteSettings.SITE_DESCRIPTION} />
 	</head>
 	<body class="bg-background text-white font-sans ">
-		<Header title={SITE_TITLE}/>
+		<Header title={json.siteSettings.SITE_TITLE}/>
 		<main>
 			<section>
 				<a id="about" class="hidden" style="display:block; position:relative; top:-50px;"></a>
 				<div class="mx-auto max-w-6xl py-12">
 					<div class="mx-auto sm:text-left">
-						<h2 class="mb-3 px-4 sm:px-24 font-bold text-3xl text-white">Josh Smith</h2>
-						<h2 class="px-4 sm:px-24 text-2xl text-">Undergraduate Student at Murdoch University</h2>
-						<p class="px-4 py-4 sm:px-24 text-lg text-greyTwo">
-							Currently in my second year of university, studying a Bachelor of IT with a Computer Science Major. 
-							I'm a passionate learner with excellent critical thinking skills. I'm also hardworking and am able to work well under pressure.
-							Currently focused on expanding my knowledge in the IT industry, specifically programming, picking up as many skills as i can along the way.
-						</p>
+						<h2 class="mb-3 px-4 sm:px-24 font-bold text-3xl text-white">{json.about.name}</h2>
+						<h2 class="px-4 sm:px-24 text-2xl text-">{json.about.title}</h2>
+						<p class="px-4 py-4 sm:px-24 text-lg text-greyTwo">{json.about.description}</p>
 						<div class="mx-auto max-w-6xl py-12 flex flex-col items-center gap-4">
-							<h2 class="text-md text-white">Here are my socials if you want to stalk me</h2>
+							<h2 class="text-md text-white">{json.about.socials}</h2>
 							<div>
 								<ul class="flex flex-row gap-4">
 									<a href="https://www.linkedin.com/in/josh-smith-483856260/" target="_blank"><iconify-icon icon="mdi:linkedin" style="color: #006bff;" width="36" height="36"></iconify-icon></a>
@@ -44,18 +40,23 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 				<a id="skills" class="hidden" style="display:block; position:relative; top:-50px;"></a>
 				<div class="mx-auto max-w-6xl py-12">
 					<div class="mx-auto px-4 sm:text-center">
-						<h2 class="pb-3 font-bold text-3xl ">Skills</h2>
-						<p class="text-md font-bold">Currently working with / learning</p>
+						<h2 class="pb-3 font-bold text-3xl ">{json.skills.title}</h2>
+						<p class="text-md font-bold">{json.skills.sub1}</p>
 						<div class="flex flex-col">
 							<h2 class="pt-4 pb-2 font-medium  text-blue">C#</h2>
 							<h2 class="py-2 font-medium  text-blue">Astro / Tailwindcss</h2>
 						</div>
-						<p class="pt-12 font-bold text-md">Have used in the past</p>
+						<p class="pt-12 font-bold text-md">{json.skills.sub2}</p>
 						<div class="flex flex-col">
-							<h2 class="pt-4 pb-2 font-medium text-blue">Java</h2>
+							<h2 class="pt-4 pb-2 font-medium text-blue">Typescript</h2>
+							<h2 class="py-2 font-medium text-blue">Java</h2>
 							<h2 class="py-2 font-medium  text-blue">C</h2>
 							<h2 class="py-2 font-medium  text-blue">Python</h2>
 							<h2 class="py-2 font-medium  text-blue">HTML / JS / CSS</h2>
+						</div>
+						<p class="pt-12 font-bold text-md">{json.skills.sub3}</p>
+						<div class="flex flex-col">
+							<h2 class="pt-4 pb-2 font-medium text-blue">Blender 3D Modelling + Animation</h2>
 						</div>
 					</div>
 					<hr class="mt-6 w-full bg-white">
@@ -65,42 +66,39 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 				<a id="background" class="hidden" style="display:block; position:relative; top:-50px;"></a> <!--unsure how to have negative position values in tailwind -->
 				<div class="mx-auto max-w-6xl py-12">
 					<div class="mx-auto sm:text-center">
-						<h2 class="pb-3 px-4 font-bold text-3xl">Background</h2>
+						<h2 class="pb-3 px-4 font-bold text-3xl">{json.background.title}</h2>
 						<div class="px-2">
-							<button id="expButton" class="p-4 text-lg transition duration-250 hover:text-blue">Experience</button>
-							<button id="eduButton" class="p-4 text-lg transition duration-250 hover:text-blue">Education</button>
+							<button id="expButton" class="p-4 text-lg transition duration-250 hover:text-blue">{json.background.sub1}</button>
+							<button id="eduButton" class="p-4 text-lg transition duration-250 hover:text-blue">{json.background.sub2}</button>
 						</div>
 						<div id="experience" class="mx-auto px-4 py-12 grid gap-4">
 							<BackgroundCard
-								date="Feb 2022 - April 2022"
-								title="Telethon Community Cinemas"
-								desc="Volunteered at the Murdoch community cinema. Stood behind the counter serving food to the guests"
+								date={json.background.card1.date}
+								title={json.background.card1.title}
+								desc={json.background.card1.desc}
 							/>
 							<BackgroundCard
-							date="Mar 2022-current"
-							title="Optus Stadium"
-							desc="Serving as a Customer Service Attendant. Working on event days such as AFL assisting patrons."
+							date={json.background.card2.date}
+							title={json.background.card2.title}
+							desc={json.background.card2.desc}
 							/>
 							<BackgroundCard
-							date="Jan 2023-current"
-							title="Murdoch IT Society Secretary"
-							desc="Currently starting this role for 2023. As secretary, I am generally keeping records of Committee meetings and keeping the Committee and Association well organised."
+							date={json.background.card3.date}
+							title={json.background.card3.title}
+							desc={json.background.card3.desc}
 							/>
 						</div>
 						<div id="edu" class="mx-auto px-4 py-12 grid gap-4 hidden">
 							<BackgroundCard
-								date="Feb 2020 - Nov 2021"
-								title="WACE"
-								desc="Graduated from Year 12 with two Academic Excellence Awards in both Media and Physics General"
+								date={json.background.card4.date}
+								title={json.background.card4.title}
+								desc={json.background.card4.desc}
 							/>
 							<BackgroundCard
-								date="2022-current"
-								title="Bachelor of IT at Murdoch University"
-								desc="Currently undergoing and commencing my second year after achieving ideal results in the previous year."
+								date={json.background.card5.date}
+								title={json.background.card5.title}
+								desc={json.background.card5.desc}
 							/>
-						</div>
-						<div id="skills" class="hidden">
-							skills area
 						</div>
 					</div>
 					<hr class="mt-6 w-full bg-white">
@@ -110,8 +108,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 				<a id="projects"></a>
 				<div class="mx-auto max-w-6xl py-12">
 					<div class="mx-auto sm:text-center">
-						<h2 class="mb-3 px-4 font-bold text-3xl">Projects</h2>
-						<p class="px-4 text-lg">See what i've been up to in my free time</p>
+						<h2 class="mb-3 px-4 font-bold text-3xl">{json.projects.title}</h2>
+						<p class="px-4 text-lg">{json.projects.desc}</p>
 					</div>
 					<div class="mx-auto px-4 py-12 grid md:grid-cols-2 gap-4">
 						<ProjectCard
