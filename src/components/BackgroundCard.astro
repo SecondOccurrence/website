@@ -9,9 +9,9 @@ const { date, title, desc } = Astro.props;
 ---
 
 <li class="w-full flex justify-self-center">
-	<a class="px-6 pb-8 pt-4 w-full grid md:grid-cols-3 bg-card opacity-80 rounded-md">
+	<a class="px-6 pb-8 pt-4 w-full grid gap-x-12 md:grid-cols-3 bg-card opacity-80 rounded-md">
     <h2 class="text-left text-lg ">{date}</h2>
-		<h2 class="py-4 md:py-0 text-left text-lg">{title}</h2>
+		<h2 class="text-left text-lg">{title}</h2>
 		<p class="text-left text-sm">{desc}</p>
 	</a>
 </li>

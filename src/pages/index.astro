@@ -32,28 +32,46 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 			<section>
 				<div class="mx-auto max-w-6xl py-12">
 					<div class="mx-auto sm:text-center">
-						<h2 class="mb-3 px-4 font-bold text-3xl">Background</h2>
-						<div>
-							<div class="px-2">
-								<button id="expButton" class="px-2">Experience</button>
-								<button id="eduButton" class="px-2">Education</button>
-								<button id="skillButton" class="px-2">Skills</button>
-							</div>
-							<div id="experience" class="mx-auto px-4 py-12 grid gap-4">
-								<BackgroundCard
-									date="2022-2022"
-									title="job name"
-									desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-								/>
-								<BackgroundCard
-								date="2022-current"
+						<h2 class="pb-3 px-4 font-bold text-3xl">Background</h2>
+						<div class="px-2">
+							<input type="radio" id="expButton" class="appearance-none">
+							<label for="expButton">Experience</label>
+							<input type="radio" id="eduButton" class="appearance-none">
+							<label for="eduButton">Education</label>
+							<input type="radio" id="skillButton" class="appearance-none">
+							<label for="skillButton">Skills</label>
+						</div>
+						<div id="experience" class="mx-auto px-4 py-12 grid gap-4">
+							<BackgroundCard
+								date="2022-2022"
 								title="job name"
 								desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 							/>
-							</div>
-							<div id="skills" class="hidden">
-								skills area
-							</div>
+							<BackgroundCard
+							date="2022-current"
+							title="job name"
+							desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+							/>
+							<BackgroundCard
+							date="2023-current"
+							title="job name"
+							desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+							/>
+						</div>
+						<div id="edu" class="mx-auto px-4 py-12 grid gap-4 hidden">
+							<BackgroundCard
+								date="2016-2021"
+								title="secondary education"
+								desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+							/>
+							<BackgroundCard
+								date="2022-current"
+								title="Bachelor of IT at Murdoch University"
+								desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+							/>
+						</div>
+						<div id="skills" class="hidden">
+							skills area
 						</div>
 					</div>
 				</div>
@@ -93,25 +111,40 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 	</body>
 </html>
 <script>
-	document.querySelector('#skillButton')?.addEventListener('click', () => {
-		if(!document.querySelector('#experience')?.classList.contains('hidden')) //if experience are not hidden (shown)
+	const experienceButton = document.getElementById('expButton') as HTMLInputElement;
+	const educationButton = document.getElementById('eduButton') as HTMLInputElement;
+	const skillsButton = document.getElementById('skillButton') as HTMLInputElement;
+
+	document.querySelector('#expButton')?.addEventListener('click', () => 
+	{
+		if(experienceButton?.checked == true)
 		{
-			document.querySelector('#experience')?.classList.add('hidden'); //hide the experience
-		}
-		if(document.querySelector('#skills')?.classList.contains('hidden')) //if skills is hidden
-		{
-			document.querySelector('#skills')?.classList.remove('hidden');
+			console.log("click");
+			document.querySelector('#experience')?.classList.remove('hidden');
+			document.querySelector('#edu')?.classList.add('hidden');
+			document.querySelector('#skills')?.classList.add('hidden');
 		}
 	});
 
-	document.querySelector('#expButton')?.addEventListener('click', () => {
-		if(!document.querySelector('#skills')?.classList.contains('hidden')) //if skills are not hidden (shown)
+	document.querySelector('#eduButton')?.addEventListener('click', () => 
+	{
+		if(educationButton?.checked == true)
 		{
-			document.querySelector('#skills')?.classList.add('hidden'); //hide the skills
+			document.querySelector('#edu')?.classList.remove('hidden');
+			document.querySelector('#experience')?.classList.add('hidden');
+			document.querySelector('#skills')?.classList.add('hidden');
 		}
-		if(document.querySelector('#experience')?.classList.contains('hidden')) //if experience is hidden
+	})
+
+	document.querySelector('#skillButton')?.addEventListener('click', () => 
+	{
+		if(skillsButton?.checked == true)
 		{
-			document.querySelector('#experience')?.classList.remove('hidden');
+			document.querySelector('#skills')?.classList.remove('hidden');
+			document.querySelector('#experience')?.classList.add('hidden');
+			document.querySelector('#edu')?.classList.add('hidden');
 		}
-	});
+	})
+
+
 </script>
