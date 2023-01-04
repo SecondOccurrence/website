@@ -19,6 +19,4 @@ pnpm-debug.log*
 .DS_Store
 
 #wahaha
-package.json
-package-lock.json
 .vscode
