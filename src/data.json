@@ -35,12 +35,6 @@
       "title": "Optus Stadium",
       "desc": "Serving as a Customer Service Attendant. Working on event days such as AFL assisting patrons."
     },
-    "card3":
-    {
-      "date": "Jan 2023-current",
-      "title": "Murdoch IT Society Secretary",
-      "desc": "Currently starting this role for 2023. As secretary, I am generally keeping records of Committee meetings and keeping the Committee and Association well organised."
-    },
     "card4":
     {
       "date": "Feb 2020 - Nov 2021",
@@ -57,6 +51,24 @@
   "projects": 
   {
     "title": "Projects",
-    "desc": "See what I've been up to in my free time"
+    "desc": "See what I've been up to in my free time",
+    "cards":
+    {
+      "card1":
+      {
+        "title": "s&box Fishing Minigame",
+        "body": "Made with an intention to be included in a bigger collaborative project, this minigame plans to have 2+ players fish in a pond, catching fish to gain points and win.",
+        "href": "https://github.com/SecondOccurrence/sbox-fishing",
+        "langs": "C#"
+      },
+      "card2":
+      {
+        "title": "Natural Selection Simulation",
+        "body": "A console program which will demonstrate evolution and natural selection. Currently, Entities are placed on a 25x25 plane and simply roam around. This is displayed on text files for each iteration.",
+        "href": "https://github.com/SecondOccurrence/basic-simulation",
+        "langs": "C#"
+      }
+
+    }
   }
 }

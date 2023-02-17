@@ -26,7 +26,7 @@ import json from "../data.json";
 							<h2 class="text-md text-white">{json.about.socials}</h2>
 							<div>
 								<ul class="flex flex-row gap-4">
-									<a href="https://linkedin.com/in/josh-smith1709" target="_blank"><img src="/linkedin.svg" width="24" height="24"/></a>
+									<a href="https://linkedin.com/in/josh-smith1709" class="place-self-center" target="_blank"><img src="/linkedin.svg" width="24" height="24"/></a>
 									<a href="https://github.com/SecondOccurrence" target="_blank"><img src="/github.svg" width="36" height="36"/></a>
 								</ul>
 							</div>
@@ -81,11 +81,6 @@ import json from "../data.json";
 							title={json.background.card2.title}
 							desc={json.background.card2.desc}
 							/>
-							<BackgroundCard
-							date={json.background.card3.date}
-							title={json.background.card3.title}
-							desc={json.background.card3.desc}
-							/>
 						</div>
 						<div id="edu" class="mx-auto px-4 py-12 grid gap-4 hidden">
 							<BackgroundCard
@@ -112,15 +107,15 @@ import json from "../data.json";
 					</div>
 					<div class="mx-auto px-4 py-12 grid md:grid-cols-2 gap-4">
 						<ProjectCard
-						title="s&box Fishing Minigame"
-						body="Made with an intention to be included in a bigger collaborative project, this minigame plans to have 2+ players fish in a pond, catching fish to gain points and win."
-						href="https://github.com/SecondOccurrence/sbox-fishing"
-						>
-							<div class="flex flex-row gap-4">
-								<h2 class="pt-3 text-xs text-blue font-bold">Languages:</h2>
-								<h2 class="pt-3 text-xs text-blue font-medium">C#</h2>
-							</div>
-						</ProjectCard>
+						title={json.projects.cards.card1.title}
+						body={json.projects.cards.card1.body}
+						href={json.projects.cards.card1.href}
+						langs={json.projects.cards.card1.langs}/>
+						<ProjectCard
+						title={json.projects.cards.card2.title}
+						body={json.projects.cards.card2.body}
+						href={json.projects.cards.card2.href}
+						langs={json.projects.cards.card2.langs}/>
 					</div>
 					<p class="px-4 text-md text-center">See my <a href="https://github.com/SecondOccurrence" target="_blank" class="text-blue font-bold">Github</a> for other projects I've worked on with others</p>
 					<hr class="mt-8 w-full bg-white">

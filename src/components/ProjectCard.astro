@@ -3,9 +3,10 @@ export interface Props {
 	title: string;
 	body: string;
 	href: string;
+	langs: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, langs } = Astro.props;
 ---
 
 <li class="w-full flex justify-self-center">
@@ -17,6 +18,10 @@ const { href, title, body } = Astro.props;
 		<p class="mt-3 mb-0 text-sm">
 			{body}
 		</p>
+		<div class="flex flex-row gap-4">
+			<h2 class="pt-3 text-xs text-blue font-bold">Languages:</h2>
+			<h2 class="pt-3 text-xs text-blue font-medium">{langs}</h2>
+		</div>
 		<slot/>
 	</a>
 </li>
